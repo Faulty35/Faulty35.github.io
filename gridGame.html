@@ -82,4 +82,30 @@
             setup();
         }
         setup();
+
+        window.addEventListener("keydown", function (event) {
+  if (event.defaultPrevented) {
+    return; // Do nothing if the event was already processed
+  }
+
+  switch (event.key) {
+    case "ArrowDown":
+      down();
+      break;
+    case "ArrowUp":
+      up();
+      break;
+    case "ArrowLeft":
+      left();
+      break;
+    case "ArrowRight":
+      right();
+      break;
+    default:
+      return;
+  }
+
+  // Cancel the default action to avoid it being handled twice
+  event.preventDefault();
+}, true);
         </script>
