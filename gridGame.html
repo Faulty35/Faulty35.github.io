@@ -6,7 +6,7 @@
         </head>
 
         <body>
-            setup();
+            <script>setup();</script>
         </body>
     </html>
             <script>
@@ -36,7 +36,7 @@ function setup(){
         let gameDiv = document.getElementById(header[i]);
         let content = "";
         for(let j = 0; j<slength; j++){
-            content +=table[i][j];
+            content +=table[i][j]+" ";
         }
         gameDiv.innerHTML=content;
     }
