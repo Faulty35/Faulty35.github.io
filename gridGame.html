@@ -8,9 +8,9 @@
 
         <body>
             <button onclick="left()">Left</button>
-            <button onclick="right()">Left</button>
-            <button onclick="up()">Left</button>
-            <button onclick="down()">Left</button>
+            <button onclick="right()">right</button>
+            <button onclick="up()">up</button>
+            <button onclick="down()">down</button>
         </body>
     </html>
 
@@ -66,7 +66,7 @@
             setup();
         }
         function up(){
-            let temp = (pR + 1 + slength) % slength;
+            let temp = (pR - 1 + slength) % slength;
             let x = table[temp][pC];
             table[temp][pC]=table[pR][pC];
             table[pR][pC]=x;
@@ -74,7 +74,7 @@
             setup();
         }
         function down(){
-            let temp = (pR - 1 + slength) % slength;
+            let temp = (pR + 1 + slength) % slength;
             let x = table[temp][pC];
             table[temp][pC]=table[pR][pC];
             table[pR][pC]=x;
