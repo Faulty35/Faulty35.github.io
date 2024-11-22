@@ -47,8 +47,9 @@
         }
     
         function left(){
-            let x = table[pR][pC-1];
-            table[pR][pC-1]=table[pR][pC];
+            let temp = (pC-1)%(slength+1);
+            let x = table[pR][temp];
+            table[pR][temp]=table[pR][pC];
             table[pR][pC]=x;
             pC--;
             setup();
