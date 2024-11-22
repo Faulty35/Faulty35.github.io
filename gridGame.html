@@ -7,7 +7,7 @@
         </head>
 
         <body>
-            <h>test3</h>
+            <button onclick="left()">Left</button>
         </body>
     </html>
 
@@ -18,10 +18,12 @@
         for(let i = 0; i<slength; i++){
             table[i]=[];
             for(let j = 0; j<slength; j++){
-                table[i][j] = "#";
+                table[i][j] = "-";
             }
         }
-        table[3][3]="O";
+        var pR=3;
+        var pC=3;
+        table[pR][pC]="#";
         
         var header = [];
         var x =[];
@@ -44,5 +46,11 @@
             }
         }
     
+        function left(){
+            let x = table[pR][pC-1];
+            table[pR][pC-1]=table[pR][pC];
+            table[pR][pC]=x;
+            setup();
+        }
         setup();
         </script>
