@@ -1,15 +1,6 @@
 
-    <!DOCTYPE html>
-    <html>
-        <head>
-            <title>rizz</title>
-        </head>
-
-        <body>
-            <script>window.onload = setup();</script>
-        </body>
-    </html>
-            <script>
+<!DOCTYPE html>
+<script>
                 
     var slength =16;
     var table = [];
@@ -31,14 +22,24 @@
         document.body.appendChild(x);
     }
 
-function setup(){
-    for(let i = 0; i<slength; i++){
-        let gameDiv = document.getElementById(header[i]);
-        let content = "";
-        for(let j = 0; j<slength; j++){
-            content +=table[i][j]+" ";
+    function setup(){
+        for(let i = 0; i<slength; i++){
+            let gameDiv = document.getElementById(header[i]);
+            let content = "";
+            for(let j = 0; j<slength; j++){
+                content +=table[i][j]+" ";
+            }
+            gameDiv.innerHTML=content;
         }
-        gameDiv.innerHTML=content;
     }
-}
-</script>
+    </script>
+    
+    <html>
+        <head>
+            <title>rizz</title>
+        </head>
+
+        <body>
+            <script>setup();</script>
+        </body>
+    </html>
