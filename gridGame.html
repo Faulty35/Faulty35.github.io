@@ -58,7 +58,7 @@
         }
     
         function left(){
-            let temp = (pC - 1 + (slength-1)) % (slength-1);
+            let temp = (pC - 1 + (slength)) % (slength-1);
             let x = table[pR][temp];
             table[pR][temp]=table[pR][pC];
             table[pR][pC]=x;
@@ -66,7 +66,7 @@
             setup();
         }
         function right(){
-            let temp = (pC + 1 + (slength-1)) % (slength-1);
+            let temp = (pC + 1 + (slength)) % (slength-1);
             let x = table[pR][temp];
             table[pR][temp]=table[pR][pC];
             table[pR][pC]=x;
@@ -74,7 +74,7 @@
             setup();
         }
         function up(){
-            let temp = (pR - 1 + (slength-1)) % (slength-1);
+            let temp = (pR - 1 + (slength)) % (slength-1);
             let x = table[temp][pC];
             table[temp][pC]=table[pR][pC];
             table[pR][pC]=x;
@@ -82,7 +82,7 @@
             setup();
         }
         function down(){
-            let temp = (pR + 1 + (slength-1)) % (slength-1);
+            let temp = (pR + 1 + (slength)) % (slength-1);
             let x = table[temp][pC];
             table[temp][pC]=table[pR][pC];
             table[pR][pC]=x;
