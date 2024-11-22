@@ -21,13 +21,8 @@
         for(let i = 0; i<slength; i++){
             table[i]=[];
             for(let j = 0; j<slength; j++){
-                if(i==0 || i==slength-1){
-                    table[i][j]="=";
-                }else if(j==0 || j==slength-1){
-                    table[i][j]="=";
-                }else{
-                    table[i][j] = "-";
-                }
+                table[i][j] = "-";
+                
             }
         }
         var pR=3;
@@ -38,7 +33,7 @@
         
         var header = [];
         var x =[];
-        for(let i = 0; i<slength; i++){
+        for(let i = 0; i<=slength+1; i++){
             header[i]="game"+i;
             
             x = document.createElement("div");
@@ -47,13 +42,19 @@
         }
     
         function setup(){
+            let top = "= ";
+            for(let i = 0; j<slength; j++){
+                top +="= ";
+            }
+            document.getElementById(header[0]).innerHTML=top;
             for(let i = 0; i<slength; i++){
-                let gameDiv = document.getElementById(header[i]);
-                let content = "";
+                let gameDiv = document.getElementById(header[i+1]);
+                let content = "= ";
                 for(let j = 0; j<slength; j++){
                     content +=table[i][j]+" ";
                 }
-                gameDiv.innerHTML=content;
+                gameDiv.innerHTML=content+"=";
+                document.getElementById(header[slength]).innerHTML=top;
             }
         }
     
