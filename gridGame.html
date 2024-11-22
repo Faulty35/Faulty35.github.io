@@ -15,7 +15,9 @@
     </html>
 
     <script>
-                
+        var mapX = 0;
+        var mapY = 0;
+        var gridSize = 10;
         var slength =100;
         var table = [];
         for(let i = 0; i<slength; i++){
@@ -41,10 +43,17 @@
         }
     
         function setup(){
-            for(let i = 0; i<slength; i++){
+            if(pR>10*(mapY+1)){
+                mapY++;
+            }
+            if(pC>10*(mapX+1)){
+                mapX++;
+            }
+
+            for(let i = 10*mapX * gridSize; i < Math.min((mapX + 1) * gridSize, slength); i++){
                 let gameDiv = document.getElementById(header[i]);
                 let content = "";
-                for(let j = 0; j<slength; j++){
+                for(let j = mapX * gridSize; j < Math.min((mapX + 1) * gridSize, slength); j++){
                     content +=table[i][j]+" ";
                 }
                 gameDiv.innerHTML=content;
