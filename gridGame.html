@@ -8,6 +8,9 @@
 
         <body>
             <button onclick="left()">Left</button>
+            <button onclick="right()">Left</button>
+            <button onclick="up()">Left</button>
+            <button onclick="down()">Left</button>
         </body>
     </html>
 
@@ -52,6 +55,30 @@
             table[pR][temp]=table[pR][pC];
             table[pR][pC]=x;
             pC=temp;
+            setup();
+        }
+        function right(){
+            let temp = (pC + 1 + slength) % slength;
+            let x = table[pR][temp];
+            table[pR][temp]=table[pR][pC];
+            table[pR][pC]=x;
+            pC=temp;
+            setup();
+        }
+        function up(){
+            let temp = (pR + 1 + slength) % slength;
+            let x = table[temp][pC];
+            table[temp][pC]=table[pR][pC];
+            table[pR][pC]=x;
+            pR=temp;
+            setup();
+        }
+        function up(){
+            let temp = (pR - 1 + slength) % slength;
+            let x = table[temp][pC];
+            table[temp][pC]=table[pR][pC];
+            table[pR][pC]=x;
+            pR=temp;
             setup();
         }
         setup();
