@@ -16,12 +16,18 @@
 
     <script>
                 
-        var slength =100;
+        var slength =50;
         var table = [];
         for(let i = 0; i<slength; i++){
             table[i]=[];
             for(let j = 0; j<slength; j++){
-                table[i][j] = "-";
+                if(i==0 || i==slength-1){
+                    table[i][j]="=";
+                }else if(j==0 || j==slength-1){
+                    table[i][j]="=";
+                }else{
+                    table[i][j] = "-";
+                }
             }
         }
         var pR=3;
