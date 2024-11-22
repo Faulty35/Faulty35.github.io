@@ -1,40 +1,5 @@
 
 <!DOCTYPE html>
-<script>
-                
-    var slength =16;
-    var table = [];
-    for(let i = 0; i<slength; i++){
-        table[i]=[];
-        for(let j = 0; j<slength; j++){
-            table[i][j] = "#";
-        }
-    }
-    table[3][3]="O";
-    
-    var header = [];
-    var x =[];
-    for(let i = 0; i<slength; i++){
-        header[i]="game"+i;
-        
-        x = document.createElement("div");
-        x.id = header[i];
-        document.body.appendChild(x);
-    }
-
-    function setup(){
-        for(let i = 0; i<slength; i++){
-            let gameDiv = document.getElementById(header[i]);
-            let content = "";
-            for(let j = 0; j<slength; j++){
-                content +=table[i][j]+" ";
-            }
-            gameDiv.innerHTML=content;
-        }
-    }
-
-    setup();
-    </script>
 
     <html>
         <head>
@@ -45,3 +10,39 @@
             <h>test3</h>
         </body>
     </html>
+
+    <script>
+                
+        var slength =16;
+        var table = [];
+        for(let i = 0; i<slength; i++){
+            table[i]=[];
+            for(let j = 0; j<slength; j++){
+                table[i][j] = "#";
+            }
+        }
+        table[3][3]="O";
+        
+        var header = [];
+        var x =[];
+        for(let i = 0; i<slength; i++){
+            header[i]="game"+i;
+            
+            x = document.createElement("div");
+            x.id = header[i];
+            document.body.appendChild(x);
+        }
+    
+        function setup(){
+            for(let i = 0; i<slength; i++){
+                let gameDiv = document.getElementById(header[i]);
+                let content = "";
+                for(let j = 0; j<slength; j++){
+                    content +=table[i][j]+" ";
+                }
+                gameDiv.innerHTML=content;
+            }
+        }
+    
+        setup();
+        </script>
