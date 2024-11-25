@@ -7,7 +7,7 @@
         </head>
 
         <body>
-            <button onclick="left()">Left</button>
+            <button onmousedown="left()">Left</button>
             <button onclick="right()">right</button>
             <button onclick="up()">up</button>
             <button onclick="down()">down</button>
@@ -16,7 +16,7 @@
 
     <script>    
         var slength =100;
-        var gridSize = 100;
+        var gridSize = 10;
         var table = [];
         for(let i = 0; i<slength; i++){
             table[i]=[];
