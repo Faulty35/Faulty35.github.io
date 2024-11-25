@@ -16,8 +16,8 @@
     </html>
 
     <script>    
-        var slength =100;
-        var gridSize = 100;
+        var slength =50;
+        var gridSize = 25;
         var table = [];
         for(let i = 0; i<slength; i++){
             table[i]=[];
@@ -60,6 +60,12 @@
         }
     
         function setup(){
+            if(pR==r && pC == c){
+                document.body.innerHTML = "";
+                const victory = document.createElement("h1");
+                victory.textContent = "Victory!";
+                document.body.appendChild(victory);
+            }else{
             for(let i = 0+(gridSize*cR); i<(gridSize+(gridSize*cR)); i++){
                 let gameDiv = document.getElementById(header[i-(gridSize*cR)]);
                 let content = "";
@@ -72,6 +78,7 @@
                 }
                 gameDiv.innerHTML=content;
             }
+        }
         }
     
         function left(){
