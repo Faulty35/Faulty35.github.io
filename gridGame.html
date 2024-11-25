@@ -52,7 +52,7 @@
             for(let i = 0+(gridSize*cR); i<(10+(gridSize*cR)); i++){
                 let gameDiv = document.getElementById(header[i-(gridSize*cR)]);
                 let content = "";
-                for(let j = 0+(gridSize*cC); j<(10+(gridSize*cC)); j++){
+                for(let j = 0+(gridSize*cC); j<(gridSize+(gridSize*cC)); j++){
                     content +=table[i][j]+" ";
                 }
                 gameDiv.innerHTML=content;
