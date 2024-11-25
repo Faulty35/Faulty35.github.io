@@ -28,6 +28,7 @@
                     table[i][j] = "=";
                 }else{
                     table[i][j] = "+";
+                    table[i][j].style.color="red";
                 }            
             }
         }
@@ -39,8 +40,8 @@
         table[pR][pC]="O";
         let same = false;
         do{
-            let r = Math.floor(1+(Math.random()*(slength-2)));
-            let c = Math.floor(1+(Math.random()*(slength-2)));
+            var r = Math.floor(1+(Math.random()*(slength-2)));
+            var c = Math.floor(1+(Math.random()*(slength-2)));
             if(r!=pR && c != pC){
                 table[c][r]="#";
             }
@@ -57,7 +58,6 @@
         }
     
         function setup(){
-        
             for(let i = 0+(gridSize*cR); i<(gridSize+(gridSize*cR)); i++){
                 let gameDiv = document.getElementById(header[i-(gridSize*cR)]);
                 let content = "";
