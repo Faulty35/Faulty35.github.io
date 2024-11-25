@@ -28,7 +28,6 @@
                     table[i][j] = "=";
                 }else{
                     table[i][j] = "+";
-                    table[i][j].style.color="red";
                 }            
             }
         }
@@ -44,6 +43,9 @@
             var c = Math.floor(1+(Math.random()*(slength-2)));
             if(r!=pR && c != pC){
                 table[c][r]="#";
+                same = false;
+            }else{
+                same = true;
             }
         }while(same==true);
         
@@ -62,7 +64,11 @@
                 let gameDiv = document.getElementById(header[i-(gridSize*cR)]);
                 let content = "";
                 for(let j = 0+(gridSize*cC); j<(gridSize+(gridSize*cC)); j++){
-                    content +=table[i][j]+" ";
+                    if (table[i][j] === "+") {
+                        content += `<span style="color:rgb(43, 43, 43);">${table[i][j]}</span> `;
+                    }else{
+                        content +=table[i][j]+" ";
+                    }
                 }
                 gameDiv.innerHTML=content;
             }
