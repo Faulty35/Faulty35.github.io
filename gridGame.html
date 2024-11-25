@@ -23,7 +23,7 @@
                 if(i==0||i==slength-1){
                     table[i][j] = "=";
                 }else if((j==0||j==slength-1)){
-                    table[i][j] = "=";
+                    table[i][j] = "^";
                 }else{
                     table[i][j] = "~";
                 }            
@@ -33,8 +33,6 @@
         var pC=3;
         var char = table[pR][pC];    
         table[pR][pC]="#";
-        table[0][0]="<";
-        table[slength-1][slength-1]=">";
         
         var header = [];
         var x =[];
