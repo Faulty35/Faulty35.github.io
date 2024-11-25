@@ -16,6 +16,7 @@
 
     <script>    
         var slength =50;
+        var girdSize = 10;
         var table = [];
         for(let i = 0; i<slength; i++){
             table[i]=[];
@@ -31,8 +32,10 @@
         }
         var pR=3;
         var pC=3;
+        var cR=pR-(pR%gridSize);
+        var cC=pC-(pC%gridSize);
         var char = table[pR][pC];    
-        table[pR][pC]="#";
+        table[pR][pC]="O";
         
         var header = [];
         var x =[];
@@ -46,10 +49,10 @@
     
         function setup(){
         
-            for(let i = 0; i<slength; i++){
+            for(let i = 0+(gridSize*cR); i<(10+(gridSize*cR)); i++){
                 let gameDiv = document.getElementById(header[i]);
                 let content = "";
-                for(let j = 0; j<slength; j++){
+                for(let j = 0+(gridSize*cC); j<(10+(gridSize*cC)); j++){
                     content +=table[i][j]+" ";
                 }
                 gameDiv.innerHTML=content;
@@ -63,6 +66,9 @@
             table[pR][pC]=char;
             char=x;
             pC=temp;
+            if(pC%gridSize==9){
+                cC=(cC - 1 + (slength/gridsize)) % (slength/gridsize);
+            }
             setup();
         }
         function right(){
@@ -72,6 +78,9 @@
             table[pR][pC]=char;
             char=x;
             pC=temp;
+            if(pC%gridSize==0){
+                cC=(cC + 1 + (slength/gridsize)) % (slength/gridsize);
+            }
             setup();
         }
         function up(){
@@ -81,6 +90,9 @@
             table[pR][pC]=char;
             char=x;
             pR=temp;
+            if(pR%gridSize==9){
+                cR=(cR - 1 + (slength/gridsize)) % (slength/gridsize);
+            }
             setup();
         }
         function down(){
@@ -90,6 +102,9 @@
             table[pR][pC]=char;
             char=x;
             pR=temp;
+            if(pR%gridSize==0){
+                cR=(cR + 1 + (slength/gridsize)) % (slength/gridsize);
+            }
             setup();
         }
         setup();
