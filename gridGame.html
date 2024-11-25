@@ -49,10 +49,10 @@
     
         function setup(){
         
-            for(let i = cR; i<(cR+gridSize); i++){
+            for(let i = 0+(gridSize*cR); j<(10+(gridSize*cR)); i++){
                 let gameDiv = document.getElementById(header[i-cR]);
                 let content = "";
-                for(let j = cC; j<cC+gridSize; j++){
+                for(let j = 0+(gridSize*cC); j<(10+(gridSize*cC)); j++){
                     content +=table[i][j]+" ";
                 }
                 gameDiv.innerHTML=content;
