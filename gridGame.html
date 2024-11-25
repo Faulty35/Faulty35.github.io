@@ -37,7 +37,14 @@
         var cC=Math.floor(pC/gridSize);
         var char = table[pR][pC];    
         table[pR][pC]="O";
-        table[2][50]="#";
+        let same = false;
+        do{
+            let r = Math.floor(1+(Math.random()*(slength-2)));
+            let c = Math.floor(1+(Math.random()*(slength-2)));
+            if(r!=pR && c != pC){
+                table[c][r]="#";
+            }
+        }while(same==true);
         
         var header = [];
         var x =[];
