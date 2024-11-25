@@ -66,7 +66,7 @@
             table[pR][pC]=char;
             char=x;
             pC=temp;
-            if(pC%gridSize==9){
+            if(pC%gridSize==gridSize-1){
                 cC=(cC - 1 + (slength/gridSize)) % (slength/gridSize);
             }
             setup();
@@ -90,7 +90,7 @@
             table[pR][pC]=char;
             char=x;
             pR=temp;
-            if(pR%gridSize==9){
+            if(pR%gridSize==gridSize-1){
                 cR=(cR - 1 + (slength/gridSize)) % (slength/gridSize);
             }
             setup();
