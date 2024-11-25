@@ -15,8 +15,8 @@
     </html>
 
     <script>    
-        var slength =50;
-        var gridSize = 5;
+        var slength =100;
+        var gridSize = 10;
         var table = [];
         for(let i = 0; i<slength; i++){
             table[i]=[];
@@ -36,6 +36,7 @@
         var cC=pC-(pC%gridSize);
         var char = table[pR][pC];    
         table[pR][pC]="O";
+        table[2][50]="#";
         
         var header = [];
         var x =[];
