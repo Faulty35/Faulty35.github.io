@@ -16,7 +16,7 @@
 
     <script>    
         var slength =50;
-        var girdSize = 10;
+        var gridSize = 10;
         var table = [];
         for(let i = 0; i<slength; i++){
             table[i]=[];
@@ -67,7 +67,7 @@
             char=x;
             pC=temp;
             if(pC%gridSize==9){
-                cC=(cC - 1 + (slength/gridsize)) % (slength/gridsize);
+                cC=(cC - 1 + (slength/gridSize)) % (slength/gridSize);
             }
             setup();
         }
@@ -79,7 +79,7 @@
             char=x;
             pC=temp;
             if(pC%gridSize==0){
-                cC=(cC + 1 + (slength/gridsize)) % (slength/gridsize);
+                cC=(cC + 1 + (slength/gridSize)) % (slength/gridSize);
             }
             setup();
         }
@@ -91,7 +91,7 @@
             char=x;
             pR=temp;
             if(pR%gridSize==9){
-                cR=(cR - 1 + (slength/gridsize)) % (slength/gridsize);
+                cR=(cR - 1 + (slength/gridSize)) % (slength/gridSize);
             }
             setup();
         }
@@ -103,7 +103,7 @@
             char=x;
             pR=temp;
             if(pR%gridSize==0){
-                cR=(cR + 1 + (slength/gridsize)) % (slength/gridsize);
+                cR=(cR + 1 + (slength/gridSize)) % (slength/gridSize);
             }
             setup();
         }
