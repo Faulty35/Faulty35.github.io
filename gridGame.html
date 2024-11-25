@@ -21,7 +21,7 @@
             table[i]=[];
             for(let j = 0; j<slength; j++){
                 if(i==0||i==slength-1){
-                    table[i][j] = "^";
+                    table[i][j] = "X";
                 }else if((j==0||j==slength-1)){
                     table[i][j] = "=";
                 }else{
@@ -100,16 +100,16 @@
   }
 
   switch (event.key) {
-    case "w":
+    case "s":
       down();
       break;
-    case "ArrowUp":
+    case "w":
       up();
       break;
-    case "ArrowLeft":
+    case "a":
       left();
       break;
-    case "ArrowRight":
+    case "d":
       right();
       break;
     default:
