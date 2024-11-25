@@ -39,7 +39,7 @@
         
         var header = [];
         var x =[];
-        for(let i = 0; i<slength; i++){
+        for(let i = 0; i<slength/gridSize; i++){
             header[i]="game"+i;
             
             x = document.createElement("div");
@@ -50,7 +50,7 @@
         function setup(){
         
             for(let i = 0+(gridSize*cR); i<(10+(gridSize*cR)); i++){
-                let gameDiv = document.getElementById(header[i]);
+                let gameDiv = document.getElementById(header[i-(gridSize*cR)]);
                 let content = "";
                 for(let j = 0+(gridSize*cC); j<(10+(gridSize*cC)); j++){
                     content +=table[i][j]+" ";
