@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 
 <title>Project</title>
+<head id="moved">Hello</head>
 
 <button onclick="setup()">hi</button>
 
 <script>
     function setup(){
-        var poke = math.floor(math.random()*10);
-
+        var poke = math.floor(1+math.random()*2);
+        var move = math.floor(1+math.random()*4);
+        choose(1,1);
 
     }
+
+    function choose(num, move){
+        if (num==1){
+            billy(move);
+        }
+    }
+
+    function billy(move){
+        if(move==1){
+            document.getElementById("moved").innerText="yippe";
+        }
+    }
+    
 </script>
